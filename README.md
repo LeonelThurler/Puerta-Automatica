@@ -25,7 +25,7 @@ Funcion principal
 
 ```c
 #include "archivo.h"
-int opcion, puerta=1,hsf,hsa,hsa2,hsf2,emergencia,horaactual;
+int puerta=1,hsf,hsa,hsa2,hsf2,emergencia,horaactual;
 FILE *ptr,*ptr2;
 main(){
 	while(puerta!=0){
