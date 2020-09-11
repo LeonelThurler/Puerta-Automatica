@@ -27,7 +27,7 @@ void cargahorarios(void){
 
 
 void puerta_automatica (int sensorad, int sensoraf,int cierre){
-	if(cierre==0){
+if(cierre==0){
 		if (sensorad==0 && sensoraf==0){
 			printf("la puerta permanecera cerrada\n");
 		}
