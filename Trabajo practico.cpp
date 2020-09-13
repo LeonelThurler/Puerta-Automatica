@@ -19,32 +19,29 @@ while(emergencia==0){
 		scanf("%d",&emergencia);
 		fflush(stdin);
 }
-
-while(h=!0){
-			ptr=fopen("config.txt","rt");
-			while(!feof(ptr)){
-	 			fread(&horainicio,sizeof(horainicio),1,ptr);
-	 			fread(&horacierre,sizeof(horacierre),1,ptr);
-	 		}
-	 		fclose(ptr);
-			while((hora->tm_hour)>=horainicio && (hora->tm_hour)<horacierre){
-				cierre=0;
-				printf("\nHay personas afuera queriendo entrar?");
-				scanf("%d",&sensoraf);
-				fflush(stdin);
-				sensorad=0;
-				puerta_automatica(sensorad,sensoraf,cierre);
-				printf("\nHay personas dentro queriendo salir?");
-				scanf("%d",&sensorad);
-				sensoraf=0;
-				puerta_automatica(sensorad,sensorad,cierre);
-			}
-			while((hora->tm_hour)<horainicio || (hora->tm_hour)>=horacierre ){
-				cierre=1;
-				sensoraf=0;
-				printf("Hay personas adentro queriendo salir?\n");
-				scanf("%d",&sensorad);
-				puerta_automatica(sensorad,sensoraf,cierre);
-			}
-		}
+ptr=fopen("config.txt","rt");
+while(!feof(ptr)){
+	 fread(&horainicio,sizeof(horainicio),1,ptr);
+	 fread(&horacierre,sizeof(horacierre),1,ptr);
+}
+fclose(ptr);
+while((hora->tm_hour)>=horainicio && (hora->tm_hour)<horacierre){
+	cierre=0;
+	printf("\nHay personas afuera queriendo entrar?");
+	scanf("%d",&sensoraf);
+	fflush(stdin);
+	sensorad=0;
+	puerta_automatica(sensorad,sensoraf,cierre);
+	printf("\nHay personas dentro queriendo salir?");
+	scanf("%d",&sensorad);
+	sensoraf=0;
+	puerta_automatica(sensorad,sensorad,cierre);
+}
+while((hora->tm_hour)<horainicio || (hora->tm_hour)>=horacierre ){
+	cierre=1;
+	sensoraf=0;
+	printf("Hay personas adentro queriendo salir?\n");
+	scanf("%d",&sensorad);
+	puerta_automatica(sensorad,sensoraf,cierre);
+ }
 }
