@@ -36,7 +36,7 @@ if(cierre==0){
 		}
 }
 else{
-	if(sensoraf==0){
+	if(sensorad==0){
 		printf("la puerta esta cerrada");
 	}
 	else{
