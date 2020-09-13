@@ -8,20 +8,23 @@ void puerta_automatica (int sensorad, int sensoraf,int cierre);
 void cargahorarios(void);
 
 void cargahorarios(void){
-	int  horainicio,horacierre;
+	int  horainicio,horacierre,config;
 	FILE *ptr;
+	printf("Quiere configurar los horarios de apertura? si=1,no=0 ");
+	scanf("%d",&config);
+	if(config==1){
 	ptr=fopen("config.txt","wt");
-	
 	 		if(ptr==NULL){
 	 		printf("no se pudo crear el archivo");
 	 		}
-	 		
-			horainicio=8;
+	 		printf("Coloque horario de inicio de la apertura ");
+			scanf("%d",&horainicio);
 			fwrite(&horainicio,sizeof(horainicio),1,ptr);
-			horacierre=19;
+			printf("Coloque horario de cierre de la apertura ");
+			scanf("%d",&horacierre);
 			fwrite(&horacierre,sizeof(horacierre),1,ptr);
 	 		fclose(ptr);
-	 		
+	}
 	 	return;
 }
 
