@@ -39,7 +39,7 @@ while(h=!0){
 				sensoraf=0;
 				puerta_automatica(sensorad,sensorad,cierre);
 			}
-			while((hora->tm_hour)<horainicio || (hora->tm_hour)>horacierre ){
+			while((hora->tm_hour)<horainicio || (hora->tm_hour)>=horacierre ){
 				cierre=1;
 				sensoraf=0;
 				printf("Hay personas adentro queriendo salir?\n");
