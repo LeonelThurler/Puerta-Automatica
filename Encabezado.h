@@ -4,7 +4,7 @@
 #include <time.h>
 #include <stdlib.h>
 
-int  horainicio,horacierre,sensorad,sensoraf,cierre,boton,opcion,tiempo;
+int  horainicio,horacierre,sensorad,sensoraf,cierre,boton,opcion=0,tiempo;
 FILE *ptr;
 
 void emergencia(int boton);
