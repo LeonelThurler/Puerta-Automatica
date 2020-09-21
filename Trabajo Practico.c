@@ -2,7 +2,7 @@
 
 main(){
 	
-while(l==0){
+while(opcion==0){
 switch(caso()){	
 	case 1:
 		horarioapertura();
