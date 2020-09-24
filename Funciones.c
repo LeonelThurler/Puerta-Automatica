@@ -27,7 +27,7 @@ int horarioapertura(void){
 	time(&ahora);
 	hora = localtime(&ahora);
 	
-	int  horainicio,horacierre,sensoraf,sensorad,l;
+	int  horainicio,horacierre,sensoraf,sensorad,emergencia;
 	FILE *ptr;
 	ptr=fopen("config.txt","rt");
 	while(!feof(ptr)){
@@ -44,8 +44,8 @@ int horarioapertura(void){
 		scanf("%d",&sensorad);
 		abierto(sensorad,sensoraf);
 		printf("\nEn caso de emergencia pulse 1 sino presione otro numero");
-		scanf("%d",&l);
-		if(l==1){
+		scanf("%d",&emergencia);
+		if(emergencia==1){
 			return 3;
 		}
 	}
